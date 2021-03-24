@@ -24,10 +24,11 @@ Route::get('/posts/{id}', 'HomeController@showPost');
 
 Route::post('/posts/{id}/comments', 'HomeController@saveComment');
 
+
 //Route::resource('posts', PostController::class);
 
 //Route::resource('users', UserController::class);
 
-Route::view('/dashboard', 'admin/users');
+Route::view('/dashboard', 'admin/posts');
 
 Auth::routes();

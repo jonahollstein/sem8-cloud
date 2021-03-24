@@ -9,20 +9,24 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>Header</th>
-      <th>Header</th>
-      <th>Header</th>
-      <th>Header</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Created at</th>
+      <th>Remember token</th>
     </tr>
   </thead>
   <tbody>
+    @foreach ($user as $user )
+
     <tr>
-      <td>1,001</td>
+      <td>{{ $user->id }}</td>
       <td>Lorem</td>
       <td>ipsum</td>
       <td>dolor</td>
       <td>sit</td>
     </tr>
+
+    @endforeach
     <tr>
       <td>1,002</td>
       <td>amet</td>

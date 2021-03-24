@@ -37,7 +37,7 @@ class HomeController extends Controller
 	public function savePost(Request $request)
 	{
 	    $post = new Post();
-	    $post->author = "Author" ;//Auth::user()->name;
+	    $post->author = Auth::user()->name;
 	    $post->title  = $request->input('title');
 	    $post->lead   = $request->input('lead');
 	    $post->body   = $request->input('body');
