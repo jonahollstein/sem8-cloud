@@ -84,7 +84,13 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+    	//dd($post->comments->sortByDesc('created_at'));
+
+	    return view('editPost', [
+	    	'post' => $post
+	    ]);
     }
 
     /**
@@ -96,7 +102,20 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post->author = Auth::user()->name;
+	    $post->title  = $request->input('title');
+	    $post->lead   = $request->input('lead');
+	    $post->body   = $request->input('body');
+
+		$image = $request->file('image');
+		$post->image = $image->storeAs(
+			'images',
+			$image->getClientOriginalName(),
+			'public'
+		);
+	    $post->save();
+
+	    return redirect('admin/posts');
     }
 
     /**

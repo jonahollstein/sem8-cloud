@@ -14,6 +14,7 @@
       <th>Body</th>
       <th>Image</th>
       <th>Author</th>
+      <th> </th>
     </tr>
   </thead>
   <tbody> 
@@ -27,6 +28,7 @@
       <td>{{ $post->body }}</td>
       <td>{{ $post->image }}</td>
       <td>{{ $post->author }}</td>
+      <td><a href="{{ url('posts/edit/' . $post->id) }}"> Edit &rarr;</a></td>
     </tr>
 
     @endforeach

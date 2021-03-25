@@ -35,4 +35,5 @@ Route::get('/admin/users', 'HomeController@userAdmin');
 Route::get('/admin/posts', 'HomeController@postAdmin');
 Route::get('/admin/comments', 'HomeController@commentAdmin');
 
+
 Auth::routes();
