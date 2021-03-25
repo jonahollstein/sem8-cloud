@@ -31,7 +31,7 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
-        return view(view: 'posts.create');
+        return view(view: 'createPost');
     }
 
     /**
@@ -43,7 +43,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = new Post();
-	    $post->author = "Author" ;//Auth::user()->name;
+	    $post->author = Auth::user()->name;
 	    $post->title  = $request->input('title');
 	    $post->lead   = $request->input('lead');
 	    $post->body   = $request->input('body');

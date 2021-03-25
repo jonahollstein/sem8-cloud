@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Comment;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -15,6 +16,33 @@ class HomeController extends Controller
 
 	    return view('home', [
     		'posts' => $posts
+		]);
+	}
+
+	public function postAdmin()
+    {
+		$posts = Post::all();
+
+	    return view('admin/posts', [
+    		'posts' => $posts
+		]);
+	}
+
+	public function userAdmin()
+    {
+		$users = User::all();
+
+	    return view('admin/users', [
+    		'users' => $users
+		]);
+	}
+
+	public function commentAdmin()
+    {
+		$comments = Comment::all();
+
+	    return view('admin/comments', [
+    		'comments' => $comments
 		]);
 	}
 
@@ -56,7 +84,7 @@ class HomeController extends Controller
 	public function saveComment(Request $request, $postId) 
 	{
 	    $comment = new Comment();
-	    $comment->author  = "Autor"; // Auth::user()->name;
+	    $comment->author  = Auth::user()->name;
 	    $comment->text    = $request->input('kommentar');
 	    $comment->post_id = $postId;
 	    $comment->save();

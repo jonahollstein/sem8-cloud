@@ -52,7 +52,7 @@
             <a class="nav-link" href="{{ url('/posts/create') }}">Create</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/dashboard') }}">Admin</a>
+            <a class="nav-link" href="{{ url('/admin/posts') }}">Admin</a>
           </li>
           @endauth
         </ul>

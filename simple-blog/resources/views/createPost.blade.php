@@ -5,7 +5,7 @@
   <div class="card my-4">
     <h5 class="card-header">Create a Post:</h5>
     <div class="card-body">
-      <form method="POST" action="{{ url('/posts/save') }}" enctype="multipart/form-data">
+      <form method="POST" action="{{ url('/posts') }}" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">

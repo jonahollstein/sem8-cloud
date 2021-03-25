@@ -15,20 +15,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
 
-
+/* 
 Route::post('/posts/save', 'HomeController@savePost');
 
 Route::get('/posts/create', 'HomeController@createPost');
 
 Route::get('/posts/{id}', 'HomeController@showPost');
+*/
 
 Route::post('/posts/{id}/comments', 'HomeController@saveComment');
 
 
-//Route::resource('posts', PostController::class);
 
-//Route::resource('users', UserController::class);
+Route::resource('posts', PostController::class);
 
-Route::view('/dashboard', 'admin/posts');
+Route::resource('users', UserController::class);
+
+Route::get('/admin/users', 'HomeController@userAdmin');
+Route::get('/admin/posts', 'HomeController@postAdmin');
+Route::get('/admin/comments', 'HomeController@commentAdmin');
 
 Auth::routes();
