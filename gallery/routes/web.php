@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('gallery');
+    return view('home');
+});
+
+Route::get('/head', function () {
+    return view('head');
 });
