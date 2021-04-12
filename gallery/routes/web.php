@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\GalleryController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+//Route::get('/', 'Controller@index');
 
-Route::get('/head', function () {
-    return view('head');
-});
+Route::resource('galleries', GalleryController::class); 
+
+Route::get('/', [GalleryController::class, 'index']);
