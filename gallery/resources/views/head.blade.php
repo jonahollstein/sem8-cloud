@@ -1,6 +1,6 @@
 <!-- Masthead-->
 
-<header class="masthead bg-primary text-white text-center" style="background-image: url('assets/mtb--2.jpg'); background-position: center;">
+<header class="masthead bg-primary text-white text-center" style="background: url('assets/jakob-0074.jpg'); background-position: left; background-repeat: no-repeat; background-size: cover">
 
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
