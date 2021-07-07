@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="simple-blog">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/simple-blog.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
